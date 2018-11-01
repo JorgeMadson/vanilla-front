@@ -1,6 +1,14 @@
 body {
-    background-color: #E5E5E5;
+    background-color: #F5F5FB;
 }
-.class {
+.login-card {
+    border: 3px solid #F2F2F2;
     background-color: white;
+}
+.container-login-horizontal {
+    display: flex; /* or inline-flex */
+    flex-direction: column;
+  }
+.login-input {
+    align-self: center;
 }
