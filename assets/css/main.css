@@ -4,25 +4,24 @@ body {
     font-family: "Source Sans Pro", "arial", sans-serif;
     -webkit-font-smoothing: antialiased;
 }
-.logo{
-    align-self: auto;
-    text-align: center;
-    color: #312F4F;
+.flex-container { /*isso é um container*/
+    display: flex; /* flex = block */
+    flex-direction: column;
+    margin: 0 auto; /*Isso centraliza horizontalmente*/
 }
 .login-card {
     border: 3px solid #F2F2F2;
     background-color: white;
     width: 36vmax;
 }
-.flex-container { /*isso é um container*/
-    display: flex; /* flex = block */
-    flex-direction: column;
-    margin: 0 auto; /*Isso centraliza horizontalmente*/
-  }
-  .login-child{
+.logo{
+    text-align: center;
+    color: #312F4F;
+}
+.login-child{
     margin: 4vmax 5vmax;
     color: #696D8C;
-  }
+}
 
 .login-input input{
     width: 100%;
