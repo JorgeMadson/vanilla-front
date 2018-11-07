@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans%7CDroid+Serif%7CLato%7CLobster%7COpen+Sans%7COswald%7CPT+Sans%7CRaleway%7CSource+Sans+Pro%7CUbuntu%7CRoboto"
         rel="stylesheet">
-    <script src="assets/js/main.js"></script>
     <title>New Account</title>
 </head>
 
@@ -22,19 +21,19 @@
                 <label>Nome Completo</label>
             </div>
             <div class="login-input">
-                <input type="text">
+                <input data-js="name" type="text">
             </div>
             <div class="login-label">
                 <label>E-mail</label>
             </div>
             <div class="login-input">
-                <input type="email">
+                <input data-js="email" type="email">
             </div>
             <div class="login-label">
                 <label>Senha</label>
             </div>
             <div class="login-input">
-                <input type="password">
+                <input data-js="password" type="password">
             </div>
             <ul>
                 <li>Pelo menos 6 carateres</li>
@@ -45,11 +44,12 @@
                 <label>Confirme sua senha</label>
             </div>
             <div class="login-input">
-                <input type="password">
+                <input data-js="password-confirm"  type="password">
             </div>
             <button class="login-button">Criar conta</button>
         </div>
     </div>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
