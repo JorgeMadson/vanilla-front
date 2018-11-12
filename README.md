@@ -36,4 +36,4 @@ Pure HTML,JS,CSS
 Just open the `index.html` in the browser
 
 ### Working link
-https://jorgemadson.github.io/work-at-olist
+https://jorgemadson.github.io/work-at-olist-front/
