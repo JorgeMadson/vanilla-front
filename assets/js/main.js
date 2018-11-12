@@ -7,6 +7,11 @@
     var $passconfirmInput = document.querySelector('[data-js="password-confirm"]');
     var $createAccButton = document.querySelector('[data-js="button"]');
 
+    //Consts css colors for validation
+    const green = '#17D499';
+    const orange = '#F7BC1C';
+    const red = '#F79682';
+
     //Events
     $passInput.addEventListener('input', passStrength, false);
     $nameInput.addEventListener('input', nameEntered, false);
@@ -38,7 +43,7 @@
             return $passInput.focus();
         if (!isValidEmail($emailInput.value))
             return $emailInput.focus();
-        if (!isPassStrength($passInput.value))
+        if (isPassStrength($passInput.value) !== green)
             return $passInput.focus();
         if (!($passInput.value === $passconfirmInput.value))
             return $passconfirmInput.focus();
@@ -59,21 +64,20 @@
     }
     function correctInputColor(valid) {
         if (valid)
-            return '#17D499';
+            return green;
         return '';
     }
     function passColor(firstStatus, secondStatus, thirdStatus) {
-        console.log(firstStatus, secondStatus, thirdStatus);
         if (firstStatus && secondStatus && thirdStatus) //all three
-            return '#17D499'; // green
+            return green;
         if (firstStatus) { //two of three
             if (secondStatus || thirdStatus)
-                return '#F7BC1C'; //orange      
+                return orange;
         } else {
             if (secondStatus && thirdStatus)
-                return '#F7BC1C'; //orange
+                return orange;
         }
-        return '#F79682' //red
+        return red; //one or none
     }
 }
 )(document);
