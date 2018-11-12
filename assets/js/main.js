@@ -6,6 +6,9 @@
     var $passInput = document.querySelector('[data-js="password"]');
     var $passconfirmInput = document.querySelector('[data-js="password-confirm"]');
     var $createAccButton = document.querySelector('[data-js="button"]');
+    var $passHas6carac = document.querySelector('[data-js="passHas6carac"]');
+    var $passHasLetter = document.querySelector('[data-js="passHasLetter"]');
+    var $passHasNumber = document.querySelector('[data-js="passHasNumber"]');
 
     //Consts css colors for validation
     const green = '#17D499';
@@ -17,9 +20,19 @@
     $nameInput.addEventListener('input', nameEntered, false);
     $emailInput.addEventListener('input', validateEmail, false);
     $passconfirmInput.addEventListener('input', confirmPass, false);
-    $createAccButton.addEventListener('click', enableButton, false)
+    $createAccButton.addEventListener('click', enableButton, false);
 
     //Functions
+    function passHas6carac(pass){
+        return /^.{6,}$/.test(pass);
+    }
+    function passHasLetter(pass){
+        return /\w/.test(pass);
+    }
+    function passHasNumber(pass) {
+        return /\d/.test(pass);
+    }
+
     function nameEntered(e) {
         return e.target.style.borderColor = correctInputColor(e.target.value);
     }
@@ -27,6 +40,9 @@
         return e.target.style.borderColor = correctInputColor(isValidEmail(e.target.value));
     }
     function passStrength(e) {
+        $passHas6carac.style.color = passHas6carac(e.target.value) ? green : orange;
+        $passHasLetter.style.color = passHasLetter(e.target.value) ? green : orange;
+        $passHasNumber.style.color = passHasNumber(e.target.value) ? green : orange;
         return e.target.style.borderColor = isPassStrength(e.target.value);
     }
     function confirmPass(e) {
@@ -48,16 +64,13 @@
         if (!($passInput.value === $passconfirmInput.value))
             return $passconfirmInput.focus();
 
-        // Pelo menos 6 carateres
-        // Pelo menos 1 letra
-        // Pelo menos 1 número
+        $createAccButton.textContent = '...';
 
-        if (!confirm("Tem certeza que deseja enviar o formulário?"))
-            return alert("Não enviado.");
-        return alert("Enviado com sucesso!")
+        // window.location = "https://jorgemadson.github.io";
+        
     }
     function isPassStrength(pass) {
-        return passColor(/^.{6,}$/.test(pass), /\w/.test(pass), /\d/.test(pass));
+        return passColor(passHas6carac(pass), passHasLetter(pass), passHasNumber(pass));
     }
     function isValidEmail(email) {
         return /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/m.test(email);
