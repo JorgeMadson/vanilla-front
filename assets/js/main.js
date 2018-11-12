@@ -66,7 +66,7 @@
 
         $createAccButton.textContent = '...';
 
-        // window.location = "https://jorgemadson.github.io";
+        window.location = window.location = "./sucesso.html";
         
     }
     function isPassStrength(pass) {
