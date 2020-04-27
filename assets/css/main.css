@@ -25,7 +25,7 @@ body {
 
 .login-input input{
     width: 100%;
-    height: 3vmax;
+    height: 1.5em;
     margin: 0 0 2vmax 0;
     border: 1px solid #B6B9D0;
 }
@@ -34,8 +34,11 @@ ul{
 }
 .login-button {
     width: 100%;
-    height: 3vmax;
+    height: 3rem;
     color: white;
     background-color: #17D499;
     border: 0;
+}
+.logo {
+    max-width: 100%;
 }

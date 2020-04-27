@@ -27,7 +27,7 @@
         return /^.{6,}$/.test(pass);
     }
     function passHasLetter(pass){
-        return /\w/.test(pass);
+        return /[a-zA-Z]/.test(pass);
     }
     function passHasNumber(pass) {
         return /\d/.test(pass);
